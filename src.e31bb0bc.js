@@ -32492,7 +32492,10 @@ const App = ({
   };
 
   const signIn = () => {
-    wallet.requestSignIn(contract, 'NEAR Guest Book');
+    wallet.requestSignIn({
+      contractId: nearConfig.contractName,
+      methodNames: ['addMessage']
+    }, 'NEAR Guest Book');
   };
 
   const signOut = () => {
@@ -52413,7 +52416,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56502" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56666" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
